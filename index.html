@@ -23,7 +23,19 @@
                 <tr>
                     <td class="header" colspan="4">
                         โปรแกรมใบโพย
-                        <div class="price-indicator">6 ตังค์ / 10ตังค์</div>
+                        <div class="price-indicator">
+                            <select id="priceDropdown" class="form-select" style="display:inline-block; width:auto;">
+                                <option value="6">6 ตังค์</option>
+                                <option value="10">10 ตังค์</option>
+                            </select>
+                        </div>
+                        <script>
+                            document.getElementById('priceDropdown').addEventListener('change', function() {
+                                
+                                console.log('เลือก:', this.value + ' ตังค์');
+                                
+                            });
+                        </script>
                     </td>
                 </tr>
                 <tr>
