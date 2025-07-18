@@ -1,27 +1,13 @@
 setInterval(showTime, 1000);
 function showTime() {
-    let time = new Date();
-    let hours = time.getHours();
-    let min = time.getMinutes();
-    let sec = time.getSeconds();
-    am_pm = "AM";
-
-    if (hours >= 12) {
-        hours -= 12;
-        am_pm = "PM";
-    }
-
-    if (hours == 0) {
-        hr = 12;
-        am_pm = "AM";
-    }
-
-    hours = (hours < 10) ? "0" + hours : hours;
-    min = min < 10 ? "0" + min : min;
-    sec = sec < 10 ? "0" + sec : sec;
-
-    let currentTime = hours + ":" + min + ":" + sec + " " + am_pm; 
-    document.getElementById("clock").innerHTML = currentTime;
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-US', { 
+        hour12: false,  // เปลี่ยนเป็น false เพื่อใช้ระบบ 24 ชั่วโมง
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+    document.getElementById('clock').textContent = timeString;
 
 }
 showTime();

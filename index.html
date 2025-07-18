@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/clock.js"></script>
 </head>
+
 <body>
     <div class="container">
         <table>
             <thead>
                 <tr>
                     <td class="header" colspan="4">
+                        <div style="float: left; margin-left: 6%;" id="clock">8.10.45</div>
                         โปรแกรมใบโพย
                         <div class="price-indicator">
                             <select id="priceDropdown" class="form-select" style="display:inline-block; width: auto;">
@@ -24,7 +26,6 @@
                                 <option value="10">10 ตังค์</option>
                             </select>
                         </div>
-                        <div style="float: left; margin-right: 16px;" id="clock">8.10.45</div>
                         <script>
                             document.getElementById('priceDropdown').addEventListener('change', function () {
 
