@@ -31,11 +31,12 @@
  .price-indicator {
      position: absolute;
      top: 9px;
-     right: 10%;
-     background-color: yellow;
+     right: 5%;
+    background-color: transparent; 
      color: #f3f3f3;
      padding: 2px;
      border-radius: 2px;
+     
  }
 
  .column-header {
