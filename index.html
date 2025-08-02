@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,14 +21,12 @@
                             <p style="text-align: left; margin-left: 27%; font-size: larger; margin-bottom: 0;">
                                 โปรแกรมใบโพย</p>
                             <div class="price-indicator">
-                                <select id="priceDropdown" class="form-select"
-                                    style="display:inline-block; width: auto;">
+                                <select id="priceDropdown" class="form-select" style="display:inline-block; width: auto;">
                                     <option value="6">6 ตังค์</option>
                                     <option value="10">10 ตังค์</option>
                                     <option value="20">20 ตังค์</option>
                                 </select>
-                                <select id="priceDropdownone" class="form-select"
-                                    style="display:inline-block; width: auto;">
+                                <select id="regionDropdown" class="form-select" style="display:inline-block; width: auto;">
                                     <option value="normal">Normal</option>
                                     <option value="south">South</option>
                                 </select>
@@ -39,13 +36,13 @@
                     <tr>
                         <td class="column-header" style="width: 20%; font-size: larger;" rowspan="2">รอบ</td>
                         <td class="column-header" style="width: 26.66%;" colspan="2">
-                            1 ราคา 6/10/20 ตังค์
+                            1 ราคา <span id="price1">6</span> ตังค์
                         </td>
                         <td class="column-header" style="width: 26.66%;" colspan="2">
-                            2 ราคา 6/10/20 ตังค์
+                            2 ราคา <span id="price2">6</span> ตังค์
                         </td>
                         <td class="column-header" style="width: 26.66%;" colspan="2">
-                            3 ราคา 6/10/20 ตังค์
+                            3 ราคา <span id="price3">6</span> ตังค์
                         </td>
                     </tr>
                     <tr>
@@ -71,191 +68,147 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td class="row-header">รอบปัจจุบัน A4</td>
+                        <td class="data-cell">
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('X', '1', 'A4', 'ไทย')">ดาวน์โหลด</button>
+                            <span class="file-status file-available">✓ พร้อม</span>
+                        </td>
+                        <td class="data-cell">
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('X', '1', 'A4', 'อังกฤษ')">Download</button>
+                            <span class="file-status file-available">✓ Ready</span>
+                        </td>
+                        <td class="data-cell">
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('X', '2', 'A4', 'ไทย')">ดาวน์โหลด</button>
+                            <span class="file-status file-available">✓ พร้อม</span>
+                        </td>
+                        <td class="data-cell">
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('X', '2', 'A4', 'อังกฤษ')">Download</button>
+                            <span class="file-status file-available">✓ Ready</span>
+                        </td>
+                        <td class="data-cell">
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('X', '3', 'A4', 'ไทย')">ดาวน์โหลด</button>
+                            <span class="file-status file-available">✓ พร้อม</span>
+                        </td>
+                        <td class="data-cell">
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('X', '3', 'A4', 'อังกฤษ')">Download</button>
+                            <span class="file-status file-available">✓ Ready</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="row-header">รอบปัจจุบัน Legal</td>
+                        <td class="data-cell">
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('X', '1', 'Legal', 'ไทย')">Legal ไทย</button>
+                            <span class="file-status file-available">✓ พร้อม</span>
+                        </td>
+                        <td class="data-cell">
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('X', '1', 'Legal', 'อังกฤษ')">Legal ENG</button>
+                            <span class="file-status file-available">✓ Ready</span>
+                        </td>
+                        <td class="data-cell">
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('X', '2', 'Legal', 'ไทย')">Legal ไทย</button>
+                            <span class="file-status file-available">✓ พร้อม</span>
+                        </td>
+                        <td class="data-cell">
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('X', '2', 'Legal', 'อังกฤษ')">Legal ENG</button>
+                            <span class="file-status file-available">✓ Ready</span>
+                        </td>
+                        <td class="data-cell">
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('X', '3', 'Legal', 'ไทย')">Legal ไทย</button>
+                            <span class="file-status file-available">✓ พร้อม</span>
+                        </td>
+                        <td class="data-cell">
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('X', '3', 'Legal', 'อังกฤษ')">Legal ENG</button>
+                            <span class="file-status file-available">✓ Ready</span>
+                        </td>
+                    </tr>
+                    <tr>
                         <td class="row-header">รอบที่แล้ว A4</td>
                         <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_last/6tang_A4_th.xlsx', 'โปรแกรมใบโพย_รอบที่แล้ว_6ตังค์_A4_ไทย.xlsx')">
-                                ดาวน์โหลดไฟล์
-                            </button>
-                            <span class="file-status file-available">✓ พร้อมใช้งาน</span>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('แล้ว', '1', 'A4', 'ไทย')">ดาวน์โหลด</button>
+                            <span class="file-status file-available">✓ พร้อม</span>
                         </td>
                         <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_last/6tang_A4_en.xlsx', 'lottery_program_round_last_6tang_A4_english.xlsx')">
-                                Download
-                            </button>
-                            <span class="file-status file-available">✓ Available</span>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('แล้ว', '1', 'A4', 'อังกฤษ')">Download</button>
+                            <span class="file-status file-available">✓ Ready</span>
                         </td>
                         <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_last/10tang_A4_th.xlsx', 'โปรแกรมใบโพย_รอบที่แล้ว_10ตังค์_A4_ไทย.xlsx')">
-                                ดาวน์โหลดไฟล์
-                            </button>
-                            <span class="file-status file-available">✓ พร้อมใช้งาน</span>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('แล้ว', '2', 'A4', 'ไทย')">ดาวน์โหลด</button>
+                            <span class="file-status file-available">✓ พร้อม</span>
                         </td>
                         <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_last/10tang_A4_en.xlsx', 'lottery_program_round_last_10tang_A4_english.xlsx')">
-                                Download
-                            </button>
-                            <span class="file-status file-available">✓ Available</span>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('แล้ว', '2', 'A4', 'อังกฤษ')">Download</button>
+                            <span class="file-status file-available">✓ Ready</span>
                         </td>
                         <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_last/20tang_A4_th.xlsx', 'โปรแกรมใบโพย_รอบที่แล้ว_20ตังค์_A4_ไทย.xlsx')">
-                                ดาวน์โหลดไฟล์
-                            </button>
-                            <span class="file-status file-available">✓ พร้อมใช้งาน</span>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('แล้ว', '3', 'A4', 'ไทย')">ดาวน์โหลด</button>
+                            <span class="file-status file-available">✓ พร้อม</span>
                         </td>
                         <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_last/20tang_A4_en.xlsx', 'lottery_program_round_last_20tang_A4_english.xlsx')">
-                                Download
-                            </button>
-                            <span class="file-status file-available">✓ Available</span>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('แล้ว', '3', 'A4', 'อังกฤษ')">Download</button>
+                            <span class="file-status file-available">✓ Ready</span>
                         </td>
                     </tr>
                     <tr>
                         <td class="row-header">รอบที่แล้ว Legal</td>
                         <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_last/6tang_Legal_th.xlsx', 'โปรแกรมใบโพย_รอบที่แล้ว_6ตังค์_Legal_ไทย.xlsx')">
-                                ดาวน์โหลดไฟล์
-                            </button>
-                            <span class="file-status file-available">✓ พร้อมใช้งาน</span>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('แล้ว', '1', 'Legal', 'ไทย')">Legal ไทย</button>
+                            <span class="file-status file-available">✓ พร้อม</span>
                         </td>
                         <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_last/6tang_Legal_en.xlsx', 'lottery_program_round_last_6tang_Legal_english.xlsx')">
-                                Download
-                            </button>
-                            <span class="file-status file-available">✓ Available</span>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('แล้ว', '1', 'Legal', 'อังกฤษ')">Legal ENG</button>
+                            <span class="file-status file-available">✓ Ready</span>
                         </td>
                         <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_last/10tang_Legal_th.xlsx', 'โปรแกรมใบโพย_รอบที่แล้ว_10ตังค์_Legal_ไทย.xlsx')">
-                                ดาวน์โหลดไฟล์
-                            </button>
-                            <span class="file-status file-available">✓ พร้อมใช้งาน</span>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('แล้ว', '2', 'Legal', 'ไทย')">Legal ไทย</button>
+                            <span class="file-status file-available">✓ พร้อม</span>
                         </td>
                         <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_last/10tang_Legal_en.xlsx', 'lottery_program_round_last_10tang_Legal_english.xlsx')">
-                                Download
-                            </button>
-                            <span class="file-status file-available">✓ Available</span>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('แล้ว', '2', 'Legal', 'อังกฤษ')">Legal ENG</button>
+                            <span class="file-status file-available">✓ Ready</span>
                         </td>
                         <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_last/20tang_Legal_th.xlsx', 'โปรแกรมใบโพย_รอบที่แล้ว_20ตังค์_Legal_ไทย.xlsx')">
-                                ดาวน์โหลดไฟล์
-                            </button>
-                            <span class="file-status file-available">✓ พร้อมใช้งาน</span>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('แล้ว', '3', 'Legal', 'ไทย')">Legal ไทย</button>
+                            <span class="file-status file-available">✓ พร้อม</span>
                         </td>
                         <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_last/20tang_Legal_en.xlsx', 'lottery_program_round_last_20tang_Legal_english.xlsx')">
-                                Download
-                            </button>
-                            <span class="file-status file-available">✓ Available</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="row-header">รอบที่ x A4</td>
-                        <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_x/6tang_A4_th.xlsx', 'โปรแกรมใบโพย_รอบที่ x_6ตังค์_A4_ไทย.xlsx')">
-                                ดาวน์โหลดไฟล์
-                            </button>
-                            <span class="file-status file-available">✓ พร้อมใช้งาน</span>
-                        </td>
-                        <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_x/6tang_A4_en.xlsx', 'lottery_program_round_x_6tang_A4_english.xlsx')">
-                                Download
-                            </button>
-                            <span class="file-status file-available">✓ Available</span>
-                        </td>
-                        <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_x/10tang_A4_th.xlsx', 'โปรแกรมใบโพย_รอบที่ x_10ตังค์_A4_ไทย.xlsx')">
-                                ดาวน์โหลดไฟล์
-                            </button>
-                            <span class="file-status file-available">✓ พร้อมใช้งาน</span>
-                        </td>
-                        <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_x/10tang_A4_en.xlsx', 'lottery_program_round_x_10tang_A4_english.xlsx')">
-                                Download
-                            </button>
-                            <span class="file-status file-available">✓ Available</span>
-                        </td>
-                        <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_x/20tang_A4_th.xlsx', 'โปรแกรมใบโพย_รอบที่ x_20ตังค์_A4_ไทย.xlsx')">
-                                ดาวน์โหลดไฟล์
-                            </button>
-                            <span class="file-status file-available">✓ พร้อมใช้งาน</span>
-                        </td>
-                        <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_x/20tang_A4_en.xlsx', 'lottery_program_round_x_20tang_A4_english.xlsx')">
-                                Download
-                            </button>
-                            <span class="file-status file-available">✓ Available</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="row-header">รอบที่ x Legal</td>
-                        <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_x/6tang_Legal_th.xlsx', 'โปรแกรมใบโพย_รอบที่ x_6ตังค์_Legal_ไทย.xlsx')">
-                                ดาวน์โหลดไฟล์
-                            </button>
-                            <span class="file-status file-available">✓ พร้อมใช้งาน</span>
-                        </td>
-                        <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_x/6tang_Legal_en.xlsx', 'lottery_program_round_x_6tang_Legal_english.xlsx')">
-                                Download
-                            </button>
-                            <span class="file-status file-available">✓ Available</span>
-                        </td>
-                        <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_x/10tang_Legal_th.xlsx', 'โปรแกรมใบโพย_รอบที่ x_10ตังค์_Legal_ไทย.xlsx')">
-                                ดาวน์โหลดไฟล์
-                            </button>
-                            <span class="file-status file-available">✓ พร้อมใช้งาน</span>
-                        </td>
-                        <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_x/10tang_Legal_en.xlsx', 'lottery_program_round_x_10tang_Legal_english.xlsx')">
-                                Download
-                            </button>
-                            <span class="file-status file-available">✓ Available</span>
-                        </td>
-                        <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_x/20tang_Legal_th.xlsx', 'โปรแกรมใบโพย_รอบที่ x_20ตังค์_Legal_ไทย.xlsx')">
-                                ดาวน์โหลดไฟล์
-                            </button>
-                            <span class="file-status file-available">✓ พร้อมใช้งาน</span>
-                        </td>
-                        <td class="data-cell">
-                            <button type="button" class="btn btn-primary"
-                                onclick="downloadFile('files/round_x/20tang_Legal_en.xlsx', 'lottery_program_round_x_20tang_Legal_english.xlsx')">
-                                Download
-                            </button>
-                            <span class="file-status file-available">✓ Available</span>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="downloadFileNew('แล้ว', '3', 'Legal', 'อังกฤษ')">Legal ENG</button>
+                            <span class="file-status file-available">✓ Ready</span>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <!-- Current Selection Display -->
+        <div class="current-selection" id="currentSelection">
+            กำลังแสดง: <span id="currentPrice">6 ตังค์</span> | <span id="currentRegion">Normal</span>
+        </div>
     </div>
 
     <script src="js/script.js"></script>
 </body>
-
 </html>

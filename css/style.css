@@ -14,7 +14,6 @@ body {
     margin: 0 auto;
 }
 
-/* Table Responsive Design */
 .table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -80,20 +79,21 @@ table {
 }
 
 .data-cell {
-    padding: 15px;
+    padding: 8px;
     text-align: center;
     border: 1px solid #bdc3c7;
     background-color: white;
-    height: 60px;
     vertical-align: middle;
 }
 
 .data-cell .btn {
-    margin: 2px;
-    font-size: 0.8rem;
-    padding: 6px 12px;
+    margin: 1px;
+    font-size: 0.7rem;
+    padding: 4px 8px;
     white-space: nowrap;
     position: relative;
+    display: block;
+    width: 95%;
 }
 
 .data-cell .btn:disabled {
@@ -116,7 +116,7 @@ table {
 }
 
 .file-status {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     margin-top: 2px;
     display: block;
 }
@@ -127,6 +127,16 @@ table {
 
 .file-missing {
     color: #dc3545;
+}
+
+.current-selection {
+    background-color: #e8f4fd;
+    border: 2px solid #007bff;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .star {
@@ -177,23 +187,24 @@ table {
 
     .column-header {
         font-size: 0.75rem;
-        padding: 8px;
+        padding: 6px;
     }
 
     .row-header {
         font-size: 0.8rem;
-        padding: 8px;
+        padding: 6px;
         min-width: 100px;
     }
 
     .data-cell {
-        padding: 8px;
+        padding: 4px;
     }
 
     .data-cell .btn {
-        font-size: 0.7rem;
-        padding: 4px 8px;
-        margin: 1px;
+        font-size: 0.6rem;
+        padding: 3px 6px;
+        margin: 1px auto;
+        width: 98%;
     }
 }
 
@@ -209,21 +220,18 @@ table {
 
     .column-header {
         font-size: 0.7rem;
-        padding: 6px;
+        padding: 4px;
     }
 
     .row-header {
         font-size: 0.75rem;
-        padding: 6px;
+        padding: 4px;
         min-width: 80px;
     }
 
     .data-cell .btn {
-        font-size: 0.65rem;
-        padding: 3px 6px;
-        display: block;
-        margin: 2px auto;
-        width: 90%;
+        font-size: 0.55rem;
+        padding: 2px 4px;
     }
 }
 
@@ -244,8 +252,8 @@ table {
     }
 
     .data-cell .btn {
-        font-size: 0.9rem;
-        padding: 8px 16px;
+        font-size: 0.8rem;
+        padding: 6px 12px;
     }
 }
 
